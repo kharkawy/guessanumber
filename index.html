@@ -18,13 +18,16 @@
             <h2 class="guess-result" id="guess-result"></h2>
             <input
               id="guess-input"
-              class="guess-input"
               type="number"
+              class="guess-input"
               placeholder="Type your guess"
-              min="0"
-              max="100"
-              required
+              name="guess-input"
             />
+            <label
+              id="guess-label"
+              class="guess-label"
+              for="guess-input"
+            ></label>
             <div class="buttons">
               <button id="guess-btn" class="guess-btn">
                 Guess

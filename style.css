@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=PT+Serif:400,700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=PT+Sans:700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap");
 
 * {
   margin: 0;
@@ -68,12 +68,12 @@ body {
 
 .guess-result {
   font-size: 24px;
-  margin: 25px 0;
+  margin: 25px 0 5px 0;
 }
 
 .guess-input {
   width: 300px;
-  margin: 25px 0;
+  margin: 25px 0 5px 0;
   background: none;
   border: none;
   border-bottom: 2px solid #3c3c3c;
@@ -83,9 +83,19 @@ body {
   -moz-appearance: textfield;
 }
 
+.guess-label {
+  display: block;
+  padding-right: 40px;
+  text-transform: uppercase;
+  font-family: "PT Sans";
+  font-weight: 700;
+  color: rgb(252, 41, 41);
+  font-size: 12px;
+}
+
 .guess-btn,
 .new-game-btn {
-  margin: 0 20px;
+  margin: 25px;
   font-size: 14px;
   font-family: "PT Sans", sans-serif;
   text-transform: uppercase;
