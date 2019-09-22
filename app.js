@@ -8,7 +8,7 @@
 //4. Update amount of tries +
 //5. Add the last guess to guesses panel +
 //6. If you guessed, disable guess button +
-//7. Make a new game function(reset input!)
+//7. Make a new game function(reset input!) +
 //8. Add input validation +
 
 var randomNumber;
@@ -33,6 +33,7 @@ guessButton.addEventListener("click", function() {
     compareNumbers();
     updatePreviousGuesses(playerGuess);
     updateTries();
+    guessInput.value = "";
   }
 });
 
@@ -42,10 +43,12 @@ newGameButton.addEventListener("click", function() {
 
 function startGame() {
   generateNumber();
+  playerGuess = "";
   amountOfTries = 0;
   triesSpan.innerHTML = amountOfTries;
   previousGuessesDiv.innerHTML = "";
   guessResult.innerHTML = "";
+  guessInput.value = "";
 }
 
 function generateNumber() {
@@ -87,16 +90,12 @@ function validateInput(inputValue) {
   if (inputValue.match(/^[A-Za-z]+$/)) {
     inputLabel.innerHTML = "Please input only numbers between 0 and 100";
     isInputValid = false;
-    console.log(1);
   } else if (inputValue < 0 || inputValue > 100) {
     inputLabel.innerHTML = "Please input only numbers between 0 and 100";
     isInputValid = false;
-    console.log(2);
   } else {
     inputLabel.innerHTML = "";
     isInputValid = true;
   }
-
-  console.log(isInputValid);
 }
 startGame();
