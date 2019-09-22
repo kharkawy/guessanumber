@@ -92,12 +92,15 @@ body {
 .new-game-btn {
   color: #3c3c3c;
   background: #fffdf8;
-  display: none;
 }
 
 .guess-btn:hover,
 .new-game-btn:hover {
   transform: scale(1.05);
+}
+
+.inactive {
+  display: none;
 }
 
 .tries-panel {

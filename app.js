@@ -5,28 +5,36 @@
 //   - if lower than generated number, display that it's lower +
 //   - if higher than generated number, display that it's higher +
 //   - if the same, display that you guessed +
-//4. Update amount of tries
+//4. Update amount of tries +
 //5. Add the last guess to guesses panel
-//6. If you guessed, disable guess button
+//6. If you guessed, disable guess button +
+//7. Make a new game function(reset input!)
 
 var randomNumber;
 var playerGuess;
 var isGamePlaying;
+var amountOfTries;
 
 var guessInput = document.getElementById("guess-input");
 var guessButton = document.getElementById("guess-btn");
 var guessResult = document.getElementById("guess-result");
+var newGameButton = document.getElementById("new-game-btn");
+var triesSpan = document.getElementById("tries");
 
 guessButton.addEventListener("click", function() {
   if (isGamePlaying) {
     playerGuess = guessInput.value;
     compareNumbers();
+    amountOfTries++;
+    triesSpan.innerHTML = amountOfTries;
   }
 });
 
 function startGame() {
   isGamePlaying = true;
   generateNumber();
+  amountOfTries = 0;
+  triesSpan.innerHTML = amountOfTries;
 }
 
 function generateNumber() {
@@ -45,6 +53,8 @@ function compareNumbers() {
   } else if (player == computer) {
     guessResult.innerHTML = "It's " + player + "! You guessed!";
     isGamePlaying = false;
+    guessButton.classList.add("inactive");
+    newGameButton.classList.remove("inactive");
   }
 }
 
