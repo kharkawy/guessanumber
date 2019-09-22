@@ -1,15 +1,4 @@
-//Game:
-//1. generate random number +
-//2. read player's input
-//3. compare player's guess with generated number: +
-//   - if lower than generated number, display that it's lower +
-//   - if higher than generated number, display that it's higher +
-//   - if the same, display that you guessed +
-//4. Update amount of tries +
-//5. Add the last guess to guesses panel +
-//6. If you guessed, disable guess button +
-//7. Make a new game function(reset input!) +
-//8. Add input validation +
+// TO DO: fix input validation for strings - input should take numbers only, not letters
 
 var randomNumber;
 var playerGuess;
@@ -27,7 +16,6 @@ var inputLabel = document.getElementById("guess-label");
 guessButton.addEventListener("click", function() {
   playerGuess = guessInput.value;
   validateInput(playerGuess);
-  //if validInput is true
 
   if (isInputValid) {
     compareNumbers();
