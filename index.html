@@ -14,16 +14,22 @@
         <div class="game-panel">
           <div>
             <h1 class="game-header">Guess a number between 0 and 100</h1>
-            <h2 class="guess-result">73 is too high!</h2>
-            <form action="">
-              <input
-                class="guess-input"
-                type="number"
-                placeholder="Type your guess"
-              />
-            </form>
-            <button class="guess-btn">Guess</button>
-            <button class="new-game-btn">New Game</button>
+            <h2 class="guess-result" id="guess-result"></h2>
+            <input
+              id="guess-input"
+              class="guess-input"
+              type="number"
+              placeholder="Type your guess"
+              min="0"
+              max="100"
+              required
+            />
+            <div>
+              <button id="guess-btn" class="guess-btn">
+                Guess
+              </button>
+              <button class="new-game-btn">New Game</button>
+            </div>
           </div>
         </div>
         <div class="tries-panel">
@@ -31,5 +37,6 @@
         </div>
       </div>
     </div>
+    <script src="app.js" async defer></script>
   </body>
 </html>

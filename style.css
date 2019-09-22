@@ -92,6 +92,7 @@ body {
 .new-game-btn {
   color: #3c3c3c;
   background: #fffdf8;
+  display: none;
 }
 
 .guess-btn:hover,
