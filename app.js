@@ -14,17 +14,24 @@ var randomNumber;
 var playerGuess;
 var isGamePlaying;
 var amountOfTries;
+var previousGuesses;
 
 var guessInput = document.getElementById("guess-input");
 var guessButton = document.getElementById("guess-btn");
 var guessResult = document.getElementById("guess-result");
 var newGameButton = document.getElementById("new-game-btn");
 var triesSpan = document.getElementById("tries");
+var previousGuessesDiv = document.getElementById("previous-guesses");
 
 guessButton.addEventListener("click", function() {
   if (isGamePlaying) {
     playerGuess = guessInput.value;
     compareNumbers();
+
+    var newPreviousGuess = document.createElement("span");
+    newPreviousGuess.innerHTML = playerGuess;
+    previousGuessesDiv.appendChild(newPreviousGuess);
+
     amountOfTries++;
     triesSpan.innerHTML = amountOfTries;
   }
@@ -35,6 +42,7 @@ function startGame() {
   generateNumber();
   amountOfTries = 0;
   triesSpan.innerHTML = amountOfTries;
+  previousGuesses = [];
 }
 
 function generateNumber() {
