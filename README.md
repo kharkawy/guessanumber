@@ -1,2 +1,3 @@
 # guessanumber
-Guess a number game made with PHP.
+
+Guess a number game made with JavaScript.
