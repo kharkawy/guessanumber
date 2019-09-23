@@ -5,13 +5,13 @@ var playerGuess;
 var amountOfTries;
 var isInputValid;
 
-var guessInput = document.getElementById("guess-input");
-var guessButton = document.getElementById("guess-btn");
-var guessResult = document.getElementById("guess-result");
-var newGameButton = document.getElementById("new-game-btn");
-var triesSpan = document.getElementById("tries");
-var previousGuessesDiv = document.getElementById("previous-guesses");
-var inputLabel = document.getElementById("guess-label");
+const guessInput = document.getElementById("guess-input");
+const guessButton = document.getElementById("guess-btn");
+const guessResult = document.getElementById("guess-result");
+const newGameButton = document.getElementById("new-game-btn");
+const triesSpan = document.getElementById("tries");
+const previousGuessesDiv = document.getElementById("previous-guesses");
+const inputLabel = document.getElementById("guess-label");
 
 guessButton.addEventListener("click", function() {
   playerGuess = guessInput.value;
@@ -37,6 +37,8 @@ function startGame() {
   previousGuessesDiv.innerHTML = "";
   guessResult.innerHTML = "";
   guessInput.value = "";
+  guessButton.classList.remove("inactive");
+  newGameButton.classList.add("inactive");
 }
 
 function generateNumber() {
