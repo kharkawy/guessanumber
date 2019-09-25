@@ -77,7 +77,7 @@ function gameOver() {
 }
 
 function validateInput(inputValue) {
-  if (inputValue.match(/^[A-Za-z]+$/)) {
+  if (isNaN(parseInt(inputValue))) {
     inputLabel.innerHTML = "Please input only numbers between 0 and 100";
     isInputValid = false;
   } else if (inputValue < 0 || inputValue > 100) {
